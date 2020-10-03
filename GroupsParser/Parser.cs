@@ -83,7 +83,7 @@ namespace GroupsParser
         private static void WriteToFile(List<Group> groups)
         {
             var str = JsonConvert.SerializeObject(groups);
-            File.WriteAllText("../../../Data/Groups.json", str);
+            File.WriteAllText("Data/Groups.json", str);
         }
     }
 }
