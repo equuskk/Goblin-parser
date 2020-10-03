@@ -18,8 +18,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet run
-    - name: Upload math result for job 1
+      run: dotnet run --project GroupsParser
+    - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: groups
