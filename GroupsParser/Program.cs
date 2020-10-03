@@ -7,7 +7,6 @@ namespace GroupsParser
         static void Main(string[] args)
         {
             Parser.Parse();
-            Console.ReadLine();
         }
     }
 }
