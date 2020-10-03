@@ -29,10 +29,15 @@ namespace GroupsParser
                 groups.AddRange(GetGroups(school.Id));
             }
 
+            if(!groups.Any())
+            {
+                throw new ApplicationException("Список групп пуст");
+            }
+
             WriteToFile(groups);
             sw.Stop();
             Console.WriteLine();
-            Console.WriteLine($"Получено групп: {groups.Count()}");
+            Console.WriteLine($"Получено групп: {groups.Count}");
             Console.WriteLine($"Затрачено времени: {sw.Elapsed.Seconds} секунд {sw.Elapsed.Milliseconds} милисекунд");
         }
 
