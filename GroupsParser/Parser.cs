@@ -56,6 +56,7 @@ namespace GroupsParser
                                 SiteId = int.Parse(x.Attributes["href"].Value.Split('=')[1]),
                                 Name = Regex.Replace(x.ChildNodes[2].InnerText.Trim(), @"\s+", " ")
                             })
+                            .Where(x => !string.IsNullOrWhiteSpace(x.Name))
                             .Distinct()
                             .ToList();
 
